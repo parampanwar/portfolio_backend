@@ -11,3 +11,4 @@ beanie==1.23.6
 pyotp==2.9.0
 qrcode[pil]>=7.4.2
 pillow>=10.4.0
+pydantic[email]>=2.0.0
