@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: portfolio-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MONGODB_URL
+        value: "mongodb+srv://parampanwar:jspuOpXQFxje76qx@portfolio.xvefc6r.mongodb.net/"
+      - key: DATABASE_NAME
+        value: "portfolio"
