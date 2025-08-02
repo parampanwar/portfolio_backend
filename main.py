@@ -29,7 +29,11 @@ from models import User, UserCreate, Token, UserOut,  LoginWithTwoFA, Resume, Re
 
 load_dotenv()
 
-app = FastAPI()
+app = FastAPI(
+    docs_url=None if os.getenv("ENVIRONMENT") == "production" else "/docs",
+    redoc_url=None if os.getenv("ENVIRONMENT") == "production" else "/redoc", 
+    openapi_url=None if os.getenv("ENVIRONMENT") == "production" else "/openapi.json"
+)
 
 # CORS Middleware
 app.add_middleware(
